@@ -45,6 +45,14 @@ function quiz(question,answer){
   console.log("---------------------------------")
   console.log("Your score is ", score)
   
+  if (score==30)
+  {
+    var unlock = readlineSync.question("Cast the unlock spell to enter to Level Two! :- ")
+    if (unlock.toUpperCase()=== "ALOHOMORA")
+    {
+      secondLevel();
+    }
+  }
   
 }
 
@@ -52,7 +60,14 @@ var levelOne = [QuesOne,QuesTwo,QuesThree]
 play(levelOne)
 
 
-
+function secondLevel(){
+    var levelTwo = [QuesFour,QuesFive]  
+    play(levelTwo)
+    
+   if (score == 50){
+     console.log("Excellent! "+userName+" You are a True Wizard Indeed ! ")
+   }  
+  }
 
 function play(arr){
    
